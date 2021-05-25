@@ -34,9 +34,9 @@ struct RecipeDetailView: View {
                             .padding([.leading, .bottom], 5.0)
                         
                         
-                        ForEach(recipe.ingredients, id:\.self){ item in
+                        ForEach(recipe.ingredients){ item in
                             
-                            Text("✦  " + item)
+                            Text("✦  " + item.name)
                             
                         }
                         .padding(.leading, 20)

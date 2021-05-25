@@ -18,6 +18,7 @@
 		F2F57CEE26563F460072C9AF /* RecipeDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2F57CED26563F460072C9AF /* RecipeDetailView.swift */; };
 		F2F57D89265B15A50072C9AF /* RecipeTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2F57D88265B15A50072C9AF /* RecipeTabView.swift */; };
 		F2F57DE4265CCF8C0072C9AF /* Ingredient.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2F57DE3265CCF8C0072C9AF /* Ingredient.swift */; };
+		F2F57DE7265D62380072C9AF /* RecipeFeaturedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2F57DE6265D62370072C9AF /* RecipeFeaturedView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,6 +35,7 @@
 		F2F57CED26563F460072C9AF /* RecipeDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeDetailView.swift; sourceTree = "<group>"; };
 		F2F57D88265B15A50072C9AF /* RecipeTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeTabView.swift; sourceTree = "<group>"; };
 		F2F57DE3265CCF8C0072C9AF /* Ingredient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Ingredient.swift; sourceTree = "<group>"; };
+		F2F57DE6265D62370072C9AF /* RecipeFeaturedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeFeaturedView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -93,6 +95,7 @@
 				F2F57D88265B15A50072C9AF /* RecipeTabView.swift */,
 				F2F57C5E2654A97E0072C9AF /* RecipeListView.swift */,
 				F2F57CED26563F460072C9AF /* RecipeDetailView.swift */,
+				F2F57DE6265D62370072C9AF /* RecipeFeaturedView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -205,6 +208,7 @@
 				F2F57C5F2654A97E0072C9AF /* RecipeListView.swift in Sources */,
 				F2F57CEE26563F460072C9AF /* RecipeDetailView.swift in Sources */,
 				F2F57DE4265CCF8C0072C9AF /* Ingredient.swift in Sources */,
+				F2F57DE7265D62380072C9AF /* RecipeFeaturedView.swift in Sources */,
 				F2F57C5D2654A97E0072C9AF /* Recipe_List_App.swift in Sources */,
 				F2F57C842654C0EA0072C9AF /* DataService.swift in Sources */,
 				F2F57D89265B15A50072C9AF /* RecipeTabView.swift in Sources */,

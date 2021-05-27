@@ -10,6 +10,7 @@ import SwiftUI
 struct RecipeFeaturedView: View {
     
     @EnvironmentObject var model:RecipeModel
+    @State var isDetailViewShow = false
     
     var body: some View {
         
@@ -27,29 +28,39 @@ struct RecipeFeaturedView: View {
                         
                         if model.recipes[index].featured{
                             
-                            ZStack{
+                            Button(action: {
                                 
-                                Rectangle()
-                                    .foregroundColor(.white)
+                                self.isDetailViewShow = true
                                 
-                                VStack(spacing: 0){
+                            }, label: {
+                                ZStack{
                                     
-                                    GeometryReader{ geo in
-                                        Image(model.recipes[index].image)
-                                            .resizable()
-                                            .aspectRatio(contentMode: .fill)
-                                            
-                                    }.clipped()
-                                    GeometryReader{ geo in
-                                        Text(model.recipes[index].name)
-                                            .foregroundColor(.black)
-                                            .multilineTextAlignment(.center)
-                                            .frame(width: geo.size.width, height: geo.size.height, alignment: .center)
-                                    }.frame(width: geo.size.width, height: geo.size.height/10, alignment: .center)
+                                    Rectangle()
+                                        .foregroundColor(.white)
                                     
-                                    
+                                    VStack(spacing: 0){
+                                        
+                                        GeometryReader{ geo in
+                                            Image(model.recipes[index].image)
+                                                .resizable()
+                                                .aspectRatio(contentMode: .fill)
+                                                
+                                        }.clipped()
+                                        GeometryReader{ geo in
+                                            Text(model.recipes[index].name)
+                                                .foregroundColor(.black)
+                                                .multilineTextAlignment(.center)
+                                                .frame(width: geo.size.width, height: geo.size.height, alignment: .center)
+                                        }.frame(width: geo.size.width, height: geo.size.height/10, alignment: .center)
+                                        
+                                        
+                                    }
                                 }
+                            })
+                            .sheet(isPresented: $isDetailViewShow){
+                                RecipeDetailView(recipe: model.recipes[index])
                             }
+                            .buttonStyle(PlainButtonStyle())
                             .frame(width: geo.size.width-40, height: geo.size.height-60, alignment: .center)
                             .cornerRadius(10)
                             .shadow(color: Color(.sRGB, red: 0, green: 0, blue: 0, opacity:0.5), radius: 10, x:-5, y:10)

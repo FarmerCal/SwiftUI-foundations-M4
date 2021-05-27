@@ -10,17 +10,41 @@ import SwiftUI
 struct RecipeDetailView: View {
     
     var recipe:Recipe
+    @State var selectedServingSize = 2
     
     var body: some View {
-       
+        
         //MARK: Image
         
-        VStack{
-            Image(recipe.image)
-                .resizable()
-                .scaledToFit()
-            
-            ScrollView{
+        ScrollView{
+            VStack{
+                
+                Image(recipe.image)
+                    .resizable()
+                    .scaledToFit()
+                
+                Text(recipe.name)
+                    .bold()
+                    .padding(.top,20)
+                    .font(.largeTitle)
+                
+                GeometryReader{ geo in
+                    
+                VStack(alignment: .leading){
+                    Text("Serving size")
+                    
+                    Picker("", selection: $selectedServingSize){
+                        Text("2").tag(2)
+                        Text("4").tag(4)
+                        Text("6").tag(6)
+                        Text("8").tag(8)
+                    }.pickerStyle(SegmentedPickerStyle())
+                    .frame(width:geo.size.width/2)
+                }
+                .padding()
+                }.frame(height:80)
+                
+                Divider()
                 
                 VStack(alignment: .leading){
                     
@@ -36,7 +60,7 @@ struct RecipeDetailView: View {
                         
                         ForEach(recipe.ingredients){ item in
                             
-                            Text("✦  " + item.name)
+                            Text("✦  " + RecipeModel.getPortion(ingredient:item, recipeServings: recipe.servings, targetServings: selectedServingSize) + " " + item.name.lowercased())
                             
                         }
                         .padding(.leading, 20)
@@ -45,6 +69,7 @@ struct RecipeDetailView: View {
                         
                     }
                     
+                    Divider()
                     
                     //MARK: Directions
                     VStack(alignment: .leading){
@@ -67,7 +92,6 @@ struct RecipeDetailView: View {
                     //MARK:
                 }
             }
-            .navigationBarTitle(recipe.name)
         }
     }
 }

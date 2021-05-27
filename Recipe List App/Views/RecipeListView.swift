@@ -44,7 +44,6 @@ struct RecipeListView: View {
                                     }
                                 })
                         }
-                        .navigationBarHidden(true)
                     }
                 }
             }
